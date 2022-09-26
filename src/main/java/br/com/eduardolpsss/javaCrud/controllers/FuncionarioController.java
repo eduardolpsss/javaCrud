@@ -53,7 +53,7 @@ public class FuncionarioController {
 		return funcionarioRepository.findAll(page);
 	}
 	
-	// Obter produto por nome
+	// Obter funcionário por nome
 	@GetMapping(path = "/nome/{parteNome}")
 	public Iterable<Funcionario> obterFuncionarioPorNome(@PathVariable String parteNome){
 		return funcionarioRepository.findByNomeContainingIgnoreCase(parteNome);
