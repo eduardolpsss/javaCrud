@@ -52,6 +52,12 @@ public class FuncionarioController {
 		Pageable page = PageRequest.of(numeroPagina, qtdePagina);
 		return funcionarioRepository.findAll(page);
 	}
+	
+	// Obter produto por nome
+	@GetMapping(path = "/nome/{parteNome}")
+	public Iterable<Funcionario> obterFuncionarioPorNome(@PathVariable String parteNome){
+		return funcionarioRepository.findByNomeContainingIgnoreCase(parteNome);
+	}
 
 	// Editando no banco
 	@PutMapping

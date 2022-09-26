@@ -6,4 +6,5 @@ import br.com.eduardolpsss.javaCrud.model.entities.Funcionario;
 
 public interface FuncionarioRepository extends PagingAndSortingRepository<Funcionario, Integer>{
 	
+	public Iterable<Funcionario> findByNomeContainingIgnoreCase(String parteNome);
 }
